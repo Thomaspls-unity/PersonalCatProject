@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCollisionDetection : MonoBehaviour
+public class PlayerCollisionDetection : MonoBehaviour //NOT PLAYER COLLISION
 {
     public Rigidbody2D playerRb;
     public GameObject treat;
@@ -21,11 +21,10 @@ public class PlayerCollisionDetection : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Collectable"))
+        if (other.CompareTag("Player"))
         {
             Destroy(gameObject);
             Debug.Log("You've collected a treat! You're less hungry now");
-
         }
     }
 }
